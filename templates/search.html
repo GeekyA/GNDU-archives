@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INDEX</title>
+	<style>
+		.search-bar{
+			margin-top:12px;
+			margin-left: 1200px;
+		}
+		h2,p{
+			font-family: 'Sans-serif';
+		}
+		table, td, th 
+		{  
+			font-family: 'Sans-serif';
+			border: 1px solid #ddd;
+			text-align: left;
+		}
+
+		table 
+		{
+		  border-collapse: collapse;
+		  width: 100%;
+		}
+
+		th, td 
+		{
+		  padding: 15px;
+		}
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #333;
+		}
+		li {
+		  font-family: 'Sans-serif';
+		  float: left;
+		}
+
+		li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+
+		/* Change the link color to #111 (black) on hover */
+		li a:hover {
+		  background-color: #111;
+		}
+	</style>
+</head>
+<body>
+		<div class="navbar">
+			<ul>
+				<li><a href="">Home</a></li>
+			</ul>
+
+		</div>
+
+	<div class="paperlist">
+		<table>
+			<thead>
+				<th>Title</th>
+				<th>File link</th>
+			</thead>
+			<tbody>
+				{% for paper in papers%}
+					<tr>
+						<td>{{paper.title}}</td>
+						<td><a href="{{paper.pdf.url}}" target="_blank"><button>Download</button></a></td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+
+
+</body>
+</html>

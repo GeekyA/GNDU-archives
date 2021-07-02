@@ -44,8 +44,8 @@ def search(request):
 			import re
 			out = re.search(search_key.lower(),file.title.lower())
 			if out:
-				file_names.append(file.title)
-		return HttpResponse(file_names)
+				file_names.append(file)
+		return render(request,'search.html',{'papers':file_names})
 
 	
 
