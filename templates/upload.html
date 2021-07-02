@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UPLOAD PAGE</title>
+	<style>
+		h2,p{
+			font-family: 'Sans-serif';
+		}
+		ul {
+		  list-style-type: none;
+		  margin: 0;
+		  padding: 0;
+		  overflow: hidden;
+		  background-color: #333;
+		}
+		li {
+		  font-family: 'Sans-serif';
+		  float: left;
+		}
+
+		li a {
+		  display: block;
+		  color: white;
+		  text-align: center;
+		  padding: 14px 16px;
+		  text-decoration: none;
+		}
+
+		/* Change the link color to #111 (black) on hover */
+		li a:hover {
+		  background-color: #111;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar">
+			<ul>
+				<li><a href="/">Home</a></li>
+			</ul>
+
+		</div>
+	<h2>Upload a file (question paper,notes,assignments or whatever..)</h2>
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit">Upload</button>
+	</form>
+
+</body>
+</html>
